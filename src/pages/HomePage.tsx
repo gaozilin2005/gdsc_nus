@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 export default function HomePage() {
   return (
@@ -17,29 +17,29 @@ export default function HomePage() {
 
 function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 bg-slate-950/70 backdrop-blur border-b border-white-200">
+    <header className="sticky top-0 z-50 bg-slate-100 border-b border-slate-200">
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
         <a href="#home" className="inline-flex items-center gap-2">
           <GdscDots />
-          <span className="font-bold">GDSC NUS</span>
+          <span className="font-bold text-slate-900">GDSC NUS</span>
         </a>
-        <div className="hidden gap-6 text-sm text-slate-300 md:flex">
-          <a className="hover:text-white" href="#about">
+        <div className="hidden gap-6 text-sm text-slate-700 md:flex">
+          <a className="hover:text-slate-900" href="#about">
             About
           </a>
-          <a className="hover:text-white" href="#community">
-            Community
-          </a>
-          <a className="hover:text-white" href="#events">
+          <a className="hover:text-slate-900" href="#community">
             Events
           </a>
-          <a className="hover:text-white" href="#projects">
+          <a className="hover:text-slate-900" href="#events">
+            Meet The Team
+          </a>
+          <a className="hover:text-slate-900" href="#projects">
             Projects
           </a>
         </div>
         <a
           href="#join"
-          className="inline-flex items-center rounded-full bg-blue-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow hover:bg-blue-400"
+          className="inline-flex items-center rounded-full bg-blue-500 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-blue-600"
         >
           Join Upcoming Events
         </a>
@@ -50,47 +50,38 @@ function SiteHeader() {
 
 function Hero() {
   return (
-    <section
-      id="home"
-      className="relative isolate mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-14 md:grid-cols-[1.3fr_.9fr]"
-    >
-      {/* radial accents */}
-      <div className="pointer-events-none absolute -top-24 right-0 -z-10 h-64 w-64 rounded-full bg-indigo-500/20 blur-3xl" />
-      <div className="pointer-events-none absolute -left-20 top-10 -z-10 h-56 w-56 rounded-full bg-sky-400/20 blur-3xl" />
-
-      <div>
-        <h1 className="bg-gradient-to-r from-sky-400 via-emerald-300 to-amber-300 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent md:text-6xl">
-          Build. Learn. Connect.
-        </h1>
-        <p className="mt-3 max-w-2xl text-slate-300">
-          Welcome to the Google Developer Student Club at the National
-          University of Singapore. Join us to learn, build, and grow with a
-          passionate community of developers.
-        </p>
-        <div className="mt-5 flex flex-wrap gap-3">
-          <a
-            href="#events"
-            className="inline-flex items-center rounded-full bg-amber-300 px-4 py-2 font-semibold text-slate-900 hover:bg-amber-200"
-          >
-            See Events
-          </a>
-          <a
-            href="#about"
-            className="inline-flex items-center rounded-full border border-white/15 px-4 py-2 font-semibold text-white hover:bg-white/5"
-          >
-            Learn More
-          </a>
+    <section id="home" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-2 items-center">
+        {/* Left side - Text content */}
+        <div>
+          <h1 className="text-5xl tracking-tight md:text-7xl lg:text-5xl">
+            <span className="bg-gradient-to-r from-blue-500 via-emerald-500 to-amber-400 bg-clip-text text-transparent">
+              Build. Learn. Connect
+            </span>
+          </h1>
+          <p className="mt-4 text-sm text-slate-600 max-w-lg leading-relaxed md:text-base">
+            Welcome to the Google Developer Student Club at the National
+            University of Singapore. Join us to learn, build, and grow with a
+            passionate community of developers.
+          </p>
+          <div className="mt-6">
+            <a
+              href="#events"
+              className="inline-flex items-center rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-600"
+            >
+              Join Upcoming Events
+            </a>
+          </div>
         </div>
-      </div>
 
-      <div className="md:justify-self-end">
-        <div className="flex h-60 w-[360px] items-center justify-center rounded-2xl border border-slate-200 bg-gradient-to-br from-indigo-500/15 to-sky-400/10 p-6 text-center md:h-64">
-          <div>
-            <div className="font-semibold">Add a club photo</div>
-            <p className="mt-1 text-xs text-slate-400">
-              Replace this box with an{" "}
-              <code className="font-mono">&lt;img /&gt;</code> later.
-            </p>
+        {/* Right side - Team photo */}
+        <div className="flex justify-center md:justify-end">
+          <div className="overflow-hidden rounded-3xl w-full max-w-md">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop"
+              alt="GDSC NUS Team"
+              className="h-80 w-full object-cover"
+            />
           </div>
         </div>
       </div>
@@ -100,24 +91,110 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-4 py-10">
-      <h2 className="text-2xl font-semibold">About Us</h2>
-      <div className="mt-5 grid gap-4 md:grid-cols-2">
-        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <h3 className="text-sm font-semibold">Our Mission</h3>
-          <p className="mt-2 text-slate-600">
-            To cultivate empathetic & passionate learners of technology while
-            equipping them with relevant skills and industry insights.
-          </p>
+    <section id="about" className="mx-auto max-w-6xl px-4 py-16">
+      <h2 className="text-center text-3xl font-bold text-slate-900 mb-12">
+        About Us
+      </h2>
+
+      <div className="grid gap-6 md:grid-cols-2 mb-16">
+        {/* Our Mission */}
+        <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0">
+              <div className="w-14 h-14 rounded-2xl bg-blue-500 flex items-center justify-center">
+                <svg
+                  className="w-7 h-7 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                Our Mission
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                To cultivate empathetic & passionate learners of technology
+                while equipping them with relevant skills and industry insights.
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-slate-900 p-5">
-          <h3 className="text-sm font-semibold">Our Vision</h3>
-          <p className="mt-2 text-slate-300">
-            We strive for the betterment of society through technology.
-          </p>
+
+        {/* Our Vision */}
+        <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0">
+              <div className="w-14 h-14 rounded-2xl bg-purple-500 flex items-center justify-center">
+                <svg
+                  className="w-7 h-7 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                Our Vision
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                We strive for the betterment of society through technology.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <FAQ />
+
+      {/* Left side text + Right side FAQ */}
+      <div className="grid gap-8 md:grid-cols-[1fr_1.8fr] items-start">
+        {/* Left side */}
+        <div>
+          <h3
+            className="text-4xl text-slate-900 mb-3 tracking-tight"
+            style={{
+              fontFamily:
+                '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif',
+            }}
+          >
+            Developer Student Club
+          </h3>
+          <div className="w-96 h-1.5 bg-slate-900 mb-6"></div>
+          <p
+            className="text-2xl text-slate-900 tracking-[0.15em]"
+            style={{
+              fontFamily:
+                '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif',
+            }}
+          >
+            #TECHFORGOOD
+          </p>
+        </div>
+
+        {/* Right side - FAQ */}
+        <FAQ />
+      </div>
     </section>
   );
 }
@@ -127,21 +204,25 @@ function FAQ() {
     {
       q: "What is DSC?",
       a: "A student community supported by Google Developers to grow peer-to-peer learning and build real projects.",
+      color: "bg-amber-400 hover:bg-amber-500",
     },
     {
       q: "How is DSC different?",
       a: "We emphasise hands-on learning through workshops, hacknights and open-source projects with impact.",
+      color: "bg-green-500 hover:bg-green-600",
     },
     {
       q: "How did we start?",
       a: "We began as a small group of builders that wanted a welcoming space to learn modern dev tools together.",
+      color: "bg-blue-500 hover:bg-blue-600",
     },
   ];
+
   return (
-    <div className="mt-4 space-y-3">
+    <div className="space-y-4">
       {items.map((it, i) => (
-        <Accordion key={i} title={it.q}>
-          <p className="text-slate-300">{it.a}</p>
+        <Accordion key={i} title={it.q} color={it.color}>
+          <p className="text-slate-700 text-sm leading-relaxed">{it.a}</p>
         </Accordion>
       ))}
     </div>
@@ -151,30 +232,36 @@ function FAQ() {
 function Accordion({
   title,
   children,
+  color,
 }: {
   title: string;
   children: React.ReactNode;
+  color: string;
 }) {
   const [open, setOpen] = useState(false);
+
   return (
-    <div className="overflow-hidden rounded-2xl border border-slate-200">
+    <div className="overflow-hidden rounded-xl shadow-sm">
       <button
-        onClick={() => setOpen((s) => !s)}
-        className="flex w-full items-center justify-between bg-slate-900 px-5 py-4 text-left text-white"
+        onClick={() => setOpen((v) => !v)}
+        className={`flex w-full items-center justify-between ${color} px-6 py-4 text-left text-white transition-colors`}
+        aria-expanded={open}
       >
-        <span className="font-semibold">{title}</span>
+        <span className="font-bold text-base">{title}</span>
         <span
-          className={`transition-transform ${open ? "rotate-90" : "rotate-0"}`}
+          className={`text-2xl font-light transition-transform ${
+            open ? "rotate-90" : ""
+          }`}
         >
-          ▶
+          ›
         </span>
       </button>
+
       <div
-        className={`grid transition-[grid-template-rows] duration-300 ${
-          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-        }`}
+        className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out
+            ${open ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"}`}
       >
-        <div className="min-h-0 overflow-hidden bg-slate-950/40 px-5 pb-5 pt-0">
+        <div className="bg-white px-6 py-5 border-x border-b border-slate-200">
           {children}
         </div>
       </div>
@@ -183,27 +270,86 @@ function Accordion({
 }
 
 function Community() {
-  const imgs = [
-    "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1529336953121-a9bf0127c2fc?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1558021211-6d1403321394?q=80&w=1200&auto=format&fit=crop",
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  // 3 placeholders
+  const items = [
+    {
+      id: 1,
+      src: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      id: 2,
+      src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      id: 3,
+      src: "https://images.unsplash.com/photo-1558021211-6d1403321394?q=80&w=1200&auto=format&fit=crop",
+    },
   ];
+
+  const scrollByOne = (dir: "left" | "right") => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLDivElement>("[data-card]");
+    const step = card ? card.clientWidth + 24 /* gap-6 */ : el.clientWidth / 3;
+    el.scrollBy({ left: dir === "left" ? -step : step, behavior: "smooth" });
+  };
+
   return (
-    <section id="community" className="mx-auto max-w-6xl px-4 py-10">
-      <h2 className="text-2xl font-semibold">Our Community In Action</h2>
-      <div className="mt-5 grid gap-3 md:grid-cols-3">
-        {imgs.map((src, i) => (
+    <section id="community" className="relative mx-auto max-w-6xl px-4 py-16">
+      <h2 className="text-center text-3xl font-semibold tracking-tight text-slate-800 md:text-4xl">
+        Our Community In Action
+      </h2>
+
+      <div className="relative mt-8">
+        {/* arrows */}
+        <button
+          aria-label="Previous"
+          onClick={() => scrollByOne("left")}
+          className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-slate-200 bg-white/90 p-3 shadow-sm backdrop-blur hover:bg-white"
+        >
+          ←
+        </button>
+        <button
+          aria-label="Next"
+          onClick={() => scrollByOne("right")}
+          className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-slate-200 bg-white/90 p-3 shadow-sm backdrop-blur hover:bg-white"
+        >
+          →
+        </button>
+
+        {/* scroller */}
+        <div
+          ref={scrollerRef}
+          className="
+              scroll-smooth overflow-x-auto px-12
+              [scrollbar-width:none] [-ms-overflow-style:none]
+              [&::-webkit-scrollbar]:hidden
+            "
+        >
           <div
-            key={i}
-            className="overflow-hidden rounded-2xl border border-slate-200"
+            className="
+                grid grid-flow-col gap-6 snap-x snap-mandatory
+                auto-cols-[85%]                           /* mobile: 1 card-ish */
+                md:[grid-auto-columns:calc((100%-24px*2)/3)] /* md+: exactly 3 visible (gap-6 = 24px) */
+              "
           >
-            <img
-              className="h-60 w-full object-cover"
-              src={src}
-              alt="Community"
-            />
+            {items.map((it) => (
+              <div
+                key={it.id}
+                data-card
+                className="snap-center overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md"
+              >
+                <img
+                  src={it.src}
+                  alt="Community"
+                  className="h-64 w-full object-cover"
+                />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
