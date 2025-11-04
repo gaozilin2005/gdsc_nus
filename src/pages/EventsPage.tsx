@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import Footer from "../components/Footer";
 
@@ -37,6 +38,33 @@ export default function EventsPage() {
       <SiteHeader />
       <main className="mx-auto max-w-6xl px-4 py-16">
         <h1 className="text-3xl font-bold text-center">Upcoming Events</h1>
+        
+        {/* Hack4Good Hackathon - Featured Event */}
+        <div className="mt-8 mb-12">
+          <NavLink
+            to="/events/hack4good"
+            className="block rounded-2xl border-2 border-blue-500 bg-linear-to-r from-blue-50 to-indigo-50 p-8 shadow-lg hover:shadow-xl transition-all group"
+          >
+            <div className="flex items-center gap-4">
+              <div className="shrink-0 w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center text-white text-2xl font-bold">
+                H4G
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  Hack4Good Hackathon
+                </h2>
+                <p className="mt-2 text-slate-600">
+                  DSC NUS's premier social impact hackathon - Build solutions for real-world challenges
+                </p>
+                <p className="mt-4 text-sm font-semibold text-blue-600">
+                  Learn more →
+                </p>
+              </div>
+            </div>
+          </NavLink>
+        </div>
+
+        <h2 className="text-2xl font-bold text-center mb-8">AY 24/25 Events</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {upcoming.map((e, i) => {
             const colorClasses =

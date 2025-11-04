@@ -4,6 +4,8 @@ import HomePage from "./pages/HomePage";
 import EventsPage from "./pages/EventsPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import TeamPage from "./pages/TeamPage";
+import Hack4GoodPage from "./pages/Hack4GoodPage";
+import Hack4GoodWinnersPage from "./pages/Hack4GoodWinnersPage";
 
 export default function App() {
   return (
@@ -12,6 +14,8 @@ export default function App() {
       <Route path="/about" element={<HomePage />} />
 
       <Route path="/events" element={<EventsPage />} />
+      <Route path="/events/hack4good" element={<Hack4GoodPage />} />
+      <Route path="/events/hack4good/winners" element={<Hack4GoodWinnersPage />} />
       <Route path="/projects" element={<ProjectsPage />} />
       <Route path="/team" element={<TeamPage />} />
 
