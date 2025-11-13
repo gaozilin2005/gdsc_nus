@@ -106,7 +106,7 @@ export default function EventsPage() {
                   Hack4Good Hackathon
                 </h3>
                 <p className="mt-2 text-slate-600">
-                  DSC NUS's premier social impact hackathon - Build solutions
+                  Developer Group @ NUS Computing's premier social impact hackathon - Build solutions
                   for real-world challenges
                 </p>
                 <p className="mt-4 text-sm font-semibold text-blue-600">

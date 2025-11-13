@@ -34,8 +34,7 @@ function Hero() {
             </span>
           </h1>
           <p className="mt-4 text-sm text-slate-600 max-w-lg leading-relaxed md:text-base">
-            Welcome to the Google Developer Student Club at the National
-            University of Singapore. Join us to learn, build, and grow with a
+            Welcome to Developer Group @ NUS Computing. Join us to learn, build, and grow with a
             passionate community of developers.
           </p>
           <div className="mt-6">
@@ -145,7 +144,7 @@ function About() {
       <div className="grid gap-8 md:grid-cols-[1fr_1.8fr] items-start">
         <div>
           <h3 className="text-4xl text-slate-900 mb-3 tracking-tight">
-            Developer Student Club
+            Developer Group @ NUS Computing
           </h3>
           <div className="w-96 h-1.5 bg-slate-900 mb-6" />
           <p className="text-2xl text-slate-900 tracking-[0.15em]">
@@ -163,12 +162,12 @@ function About() {
 function FAQ() {
   const items = [
     {
-      q: "What is DSC?",
-      a: "A student community supported by Google Developers to grow peer-to-peer learning and build real projects.",
+      q: "What is DG?",
+      a: "A student community that collaborates with non-profit organisations to help them solve real world problems.",
       color: "bg-amber-400 hover:bg-amber-500",
     },
     {
-      q: "How is DSC different?",
+      q: "How is DG different?",
       a: "We emphasise hands-on learning through workshops, hacknights and open-source projects with impact.",
       color: "bg-green-500 hover:bg-green-600",
     },
@@ -541,7 +540,7 @@ function Testimonials() {
   const items = [
     {
       quote:
-        "GDSC NUS has been an incredible place to learn and connect. The workshops are top-notch and the community is very supportive.",
+        "DG has been an incredible place to learn and connect. The workshops are top-notch and the community is very supportive.",
       name: "Sarah L.",
       role: "Computer Science, Year 2",
       avatar: "/avatars/sarah.jpg",
@@ -555,7 +554,7 @@ function Testimonials() {
     },
     {
       quote:
-        "The networking opportunities are fantastic. I've met people from Google and other amazing tech companies through GDSC events.",
+        "The networking opportunities are fantastic. I've met people from Google and other amazing tech companies through DG events.",
       name: "Emily T.",
       role: "Business Analytics, Year 4",
       avatar: "/avatars/emily.jpg",

@@ -55,7 +55,7 @@ export default function Hack4GoodPage() {
               <h2 className="text-2xl font-bold mb-4">About</h2>
               <div className="space-y-4 text-slate-700 leading-relaxed">
                 <p>
-                  Hack4Good is DSC NUS's premier social impact hackathon, bringing together
+                  Hack4Good is Developer Group @ NUS Computing's premier social impact hackathon, bringing together
                   students, industry mentors, and community partners to create technology
                   solutions for social and environmental challenges.
                 </p>
