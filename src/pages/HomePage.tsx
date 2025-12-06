@@ -34,12 +34,12 @@ function Hero() {
             </span>
           </h1>
           <p className="mt-4 text-sm text-slate-600 max-w-lg leading-relaxed md:text-base">
-            Welcome to Developer Group @ NUS Computing. Join us to learn, build, and grow with a
-            passionate community of developers.
+            Welcome to Developer Group @ NUS Computing. Join us to learn, build,
+            and grow with a passionate community of developers.
           </p>
           <div className="mt-6">
             <NavLink
-              to="/events"
+              to="https://t.me/dscnus"
               className="inline-flex items-center rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-600"
             >
               Join Upcoming Events
@@ -290,7 +290,11 @@ function Community() {
                 data-card
                 className="snap-center overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md"
               >
-                <img src={it.src} alt="Community" className="h-64 w-full object-cover" />
+                <img
+                  src={it.src}
+                  alt="Community"
+                  className="h-64 w-full object-cover"
+                />
               </div>
             ))}
           </div>
@@ -606,7 +610,10 @@ function Partners() {
       <h2 className="text-2xl font-semibold text-center">Our Partners</h2>
       <div className="mt-8 flex items-center justify-between gap-6 overflow-x-auto px-4">
         {logos.map((l, i) => (
-          <div key={i} className="flex shrink-0 items-center justify-center px-4">
+          <div
+            key={i}
+            className="flex shrink-0 items-center justify-center px-4"
+          >
             <img src={l.src} alt={l.alt} className="h-16 object-contain" />
           </div>
         ))}
